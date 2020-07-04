@@ -1,6 +1,7 @@
-# Networ measurement
+# Pingchan
+Networ measurement
 
-# How to use
+## How to use
 ```shell
 $ node ~/pingchan
 ```
