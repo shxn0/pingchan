@@ -3,7 +3,7 @@
 $ node ~/pingchan
 ```
 
-pingchan直下にいる場合
+directly below pingchan
 ```shell
 $ node .
 ```
