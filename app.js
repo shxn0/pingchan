@@ -2,18 +2,12 @@ const Config = require('./config');
 const Ping = require('ping');
 const emoji = require('node-emoji');
 
-// /* expressでサーバ起動!!! */
-// const express = require('express')
-// const app = express()
-
-// app.listen(3000, () => console.log('pingchan listening on port 3000!'))
-
 /* ping 開始!!! */
 const host = Config.HOST;
 
 const pingLog = [];
 
-function executePing(){
+function ping(){
   Ping.promise.probe(host)
     .then(function (res) {
       let face = expressFace(res.time);
@@ -28,10 +22,7 @@ function executePing(){
     });
 }
 
-setInterval(executePing, 1000);
-
-// app.get('/pingchan', (req, res) => res.json(pingLog));
-// app.use('/pingchan', express.static(__dirname+'/web'));
+setInterval(ping, Config.INTERVAL);
 
 function expressFace(resTime){
   if (resTime <= Config.LEVEL1 ) return emoji.get('sunglasses');
