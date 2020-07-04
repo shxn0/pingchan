@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pingchan</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>pingchan</h1>
+    <canvas id="pingchan"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+  </div>
+
+  <script>
+
+  const ctx = document.getElementById("pingchan")
+  const mesureTime = '';
+  const pingchan = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['50秒前', '40秒前', '30秒前', '20秒前', '10秒前', '0秒', 'x', 'xx'],
+      datasets: [
+        {
+          label: '速度(ms)',
+          data: [35, 34, 37, 35, 34, 35, 34, 25],
+          borderColor:'#ff6384',
+          pointBackgroundColor: '#ff6384',
+          lineTension: 0
+        }
+      ],
+    },
+    options: {
+      title: {
+        display: true,
+        text: '通信速度',
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMax: 300,
+            suggestedMin: 0,
+            stepSize: 20,
+            callback: function(value, index, values){
+              return  value +  'ms'
+            },
+          }
+        }]
+      },
+      responsive: true
+    }
+  });
+  </script>
+</body>
+
+</html>
