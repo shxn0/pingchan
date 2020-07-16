@@ -22,7 +22,7 @@ function ping(){
       if(pingLog.length > 10) pingLog.length = 10;
     })
     .catch((err) => {
-      console.log(err);
+      console.log("WTF.. ☠️");
     });
 }
 
