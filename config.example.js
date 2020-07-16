@@ -8,4 +8,5 @@ module.exports = {
   LEVEL3: 80,   // 😱: SCREAM
   LEVEL4: 100,  // 🤢: NAUSEATED_FACE
   // LEVEL4以上の数値の場合はこれ 👿: IMP
+  ERROR: "🍕"
 }
