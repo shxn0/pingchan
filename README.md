@@ -1,9 +1,12 @@
-# How to use
+# Pingchan
+Networ measurement
+
+## How to use
 ```shell
 $ node ~/pingchan
 ```
 
-pingchan直下にいる場合
+directly below pingchan
 ```shell
 $ node .
 ```
