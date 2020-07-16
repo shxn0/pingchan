@@ -10,6 +10,7 @@ const pingLog = [];
 function ping(){
   Ping.promise.probe(host)
     .then(function (res) {
+      if(res.time > 999) return console.log(`${res.host}: DEATH ${emoji.get('ghost')}`);
       let face = expressFace(res.time);
       console.log(`${res.host}: ${res.time.toFixed(2)} ${face}`);
       pingLog.unshift({
@@ -19,6 +20,9 @@ function ping(){
         date: new Date().getTime()
       })
       if(pingLog.length > 10) pingLog.length = 10;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
